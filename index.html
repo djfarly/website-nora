@@ -1,188 +1,185 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>jan willem henckel – creative coding</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style type="text/css">
-      @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700');
-      
-      svg { display: none; }
-      
-      body, html {
-        font-size: 20px;
-        font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-        line-height: 1.4;
-        margin: 0;
-        height: 100%;
-        height: 100vh;
-        background-color: #f9f9f9;
-        color: rgba(0, 0, 0, 0.85);
+
+<head>
+  <meta charset="UTF-8">
+  <title>jan willem henckel – creative coding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700');
+
+    svg {
+      display: none;
+    }
+
+    body,
+    html {
+      font-size: 20px;
+      font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+      line-height: 1.4;
+      margin: 0;
+      height: 100%;
+      height: 100vh;
+      background-color: #fafafa;
+      color: #353e41;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 10vw;
+      top: 0;
+      bottom: 0;
+      background-color: #2a8569;
+    }
+
+    h1,
+    h2 {
+      font-size: inherit;
+      font-weight: inherit;
+      margin: 0;
+      position: relative;
+      animation: transform 2.5s steps(10) infinite;
+      cursor: default;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: larger;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 1em;
+      font-size: smaller;
+      text-decoration: none;
+      cursor: pointer;
+      color: #2a8569;
+    }
+
+    a:hover {
+      color: #353e41;
+    }
+
+    main {
+      animation: glitch 3.2s infinite;
+      max-width: 80vw;
+    }
+
+    @keyframes glitch {
+      45% {
+        filter: none;
       }
-      
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-        justify-content: center;
+      46% {
+        filter: url(#dist-01);
       }
-      
-      h1, h2, h3 {
-        font-size: inherit;
-        font-weight: inherit;
-        margin: 0;
-        margin-left: 2em;
-        margin-right: 2em;
-        position: relative;
-        animation: transform 2.5s steps(10) infinite;
-        cursor: default;
+      47% {
+        filter: url(#dist-02);
       }
-      
-      h1,h2 {
-        color: rgba(0, 0, 0, 0.6)
+      48% {
+        filter: url(#dist-03);
       }
-      
-      h1:before, h2:before {
-        content: '//';
-        position: absolute;
-        left: -2em;
-        opacity: 0.5;
+      50% {
+        filter: none;
       }
-      
-      h2:before {
-        animation: comment 30.5s infinite;
-      }
-      
-      a {
-        text-decoration: none;
-        cursor: pointer;
-        color: #A4CFBE;
-      }
-      
-      a:hover:after {
-        content: '()'
-      }
-      
-      main {
-        animation: glitch 3.2s infinite;
-      }
-      
-      @keyframes glitch {
-        45% {
-          filter: none;
-        }
-        46% {
-          filter: url(#dist-01);
-        }
-        47% {
-          filter: url(#dist-02);
-        }
-        48% {
-          filter: url(#dist-03);
-        }
-        50% {
-          filter: none;
-        }
-        51% {
-          filter: blur(1px);
-        }
-        
-        53% {
-          filter: none;
-        }
-        95% {
-          filter: none;
-        }
-        96% {
-          filter:  url(#dist-02);
-        }
-        97% {
-          filter:  url(#dist-04);
-        }
-      }
-      
-      @keyframes comment {
-        45% {
-          content: "//";
-        }
-        45.5% {
-          content: "\\\\";
-        }
-        46% {
-          content: "//";
-        }
-      }
-      
-      @keyframes transform {
-        0% {
-          transform: translate(-5%, -5%) skew(-10deg) scale(1.05);
-        }
-        1% {
-          transform: none;
-        }
-        88% {
-          transform: none;
-        }
-        89% {
-          transform: translate(5%, 10%) scale(1.05);
-        }
-        90% {
-          transform: none;
-        }
+      51% {
+        filter: blur(1px);
       }
 
-    </style>
-  </head>
-  <body>
-    
+      53% {
+        filter: none;
+      }
+      95% {
+        filter: none;
+      }
+      96% {
+        filter: url(#dist-02);
+      }
+      97% {
+        filter: url(#dist-04);
+      }
+    }
+
+    @keyframes transform {
+      0% {
+        transform: translate(-5%, -5%) skew(-10deg) scale(1.05);
+      }
+      1% {
+        transform: none;
+      }
+      88% {
+        transform: none;
+      }
+      89% {
+        transform: translate(5%, 10%) scale(1.05);
+      }
+      90% {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
   <!-- ❤️ -->
-    
+
   <main>
-    <h1>jan willem henckel</h1>
+    <h1>Jan Willem Henckel</h1>
     <h2>creative coding</h2>
-    <h3><a href="mailto:hello@farly.de">sayHello</a></h3>
+    <div>
+      <a href="mailto:web@jan.cologne">— contact me</a>
+    </div>
   </main>
 
 
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-      <defs>
-        <filter id="dist-01">
-          <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="8" result="noise" seed="0"/>
-          <feConvolveMatrix in="noise" order="3" result="snoise"
-          kernelMatrix="
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="dist-01">
+        <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="8" result="noise" seed="0" />
+        <feConvolveMatrix in="noise" order="3" result="snoise" kernelMatrix="
              0  -1   0
             -1   5  -1
              0  -1   0    
-          "/>
-          <feDisplacementMap id="displacement" in="SourceGraphic" in2="snoise" scale="6" />
-        </filter>
-        <filter id="dist-02">
-          <feTurbulence id="turbulence" baseFrequency="0.2" numOctaves="8" result="noise" seed="1"/>
-          <feConvolveMatrix in="noise" order="3" result="snoise"
-          kernelMatrix="
+          " />
+        <feDisplacementMap id="displacement" in="SourceGraphic" in2="snoise" scale="6" />
+      </filter>
+      <filter id="dist-02">
+        <feTurbulence id="turbulence" baseFrequency="0.2" numOctaves="8" result="noise" seed="1" />
+        <feConvolveMatrix in="noise" order="3" result="snoise" kernelMatrix="
              0  -1   0
             -1   5  -1
              0  -1   0    
-          "/>
-          <feDisplacementMap id="displacement" in="SourceGraphic" in2="snoise" scale="6" />
-        </filter>
-        <filter id="dist-03">
-          <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="6" result="noise" seed="2"/>
-          <feConvolveMatrix in="noise" order="3" result="snoise"
-          kernelMatrix="
+          " />
+        <feDisplacementMap id="displacement" in="SourceGraphic" in2="snoise" scale="6" />
+      </filter>
+      <filter id="dist-03">
+        <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="6" result="noise" seed="2" />
+        <feConvolveMatrix in="noise" order="3" result="snoise" kernelMatrix="
              0  -1   0
             -1   5  -1
              0  -1   0    
-          "/>
-          <feDisplacementMap id="displacement" in="SourceGraphic" in2="snoise" scale="6" />
-        </filter>
-        <filter id="dist-04">
-          <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="6" result="noise" seed="2" type="FractalNoise"/>
-          <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6" />
-        </filter>
-      </defs> 
-    </svg>
+          " />
+        <feDisplacementMap id="displacement" in="SourceGraphic" in2="snoise" scale="6" />
+      </filter>
+      <filter id="dist-04">
+        <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="6" result="noise" seed="2" type="FractalNoise" />
+        <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6" />
+      </filter>
+    </defs>
+  </svg>
 
-  
-  </body>
+
+</body>
+
 </html>
