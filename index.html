@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Jan Willem Henckel – creative coding</title>
+  <title>Nora Bloch – UX/UI design</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="never" />
   <style type="text/css">
@@ -22,7 +22,7 @@
       height: 100%;
       height: 100vh;
       background-color: #fafafa;
-      color: #353e41;
+      color: #2b2829;
     }
 
     body {
@@ -39,7 +39,7 @@
       width: 10vw;
       top: 0;
       bottom: 0;
-      background-color: #2a8569;
+      background-color: #dd1536;
     }
 
     h1,
@@ -65,68 +65,11 @@
       font-size: smaller;
       text-decoration: none;
       cursor: pointer;
-      color: #2a8569;
+      color: #dd1536;
     }
 
     a:hover {
-      color: #353e41;
-    }
-
-    main {
-      animation: glitch 3.2s infinite;
-      max-width: 80vw;
-    }
-
-    @keyframes glitch {
-      45% {
-        filter: none;
-      }
-      46% {
-        filter: url(#dist-01);
-      }
-      47% {
-        filter: url(#dist-02);
-      }
-      48% {
-        filter: url(#dist-03);
-      }
-      50% {
-        filter: none;
-      }
-      51% {
-        filter: blur(1px);
-      }
-
-      53% {
-        filter: none;
-      }
-      95% {
-        filter: none;
-      }
-      96% {
-        filter: url(#dist-02);
-      }
-      97% {
-        filter: url(#dist-04);
-      }
-    }
-
-    @keyframes transform {
-      0% {
-        transform: translate(-5%, -5%) skew(-10deg) scale(1.05);
-      }
-      1% {
-        transform: none;
-      }
-      88% {
-        transform: none;
-      }
-      89% {
-        transform: translate(5%, 10%) scale(1.05);
-      }
-      90% {
-        transform: none;
-      }
+      color: #97285c;
     }
   </style>
 </head>
@@ -136,49 +79,12 @@
   <!-- ❤️ -->
 
   <main>
-    <h1>Jan Willem Henckel</h1>
-    <h2>creative coding</h2>
+    <h1>Nora Bloch</h1>
+    <h2>UX/UI design</h2>
     <div>
-      <a href="mailto:web@jan.cologne">— contact me</a>
+      <a href="mailto:nora@mpfilm.de">— contact me</a>
     </div>
   </main>
-
-
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-    <defs>
-      <filter id="dist-01">
-        <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="8" result="noise" seed="0" />
-        <feConvolveMatrix in="noise" order="3" result="snoise" kernelMatrix="
-             0  -1   0
-            -1   5  -1
-             0  -1   0    
-          " />
-        <feDisplacementMap id="displacement" in="SourceGraphic" in2="snoise" scale="6" />
-      </filter>
-      <filter id="dist-02">
-        <feTurbulence id="turbulence" baseFrequency="0.2" numOctaves="8" result="noise" seed="1" />
-        <feConvolveMatrix in="noise" order="3" result="snoise" kernelMatrix="
-             0  -1   0
-            -1   5  -1
-             0  -1   0    
-          " />
-        <feDisplacementMap id="displacement" in="SourceGraphic" in2="snoise" scale="6" />
-      </filter>
-      <filter id="dist-03">
-        <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="6" result="noise" seed="2" />
-        <feConvolveMatrix in="noise" order="3" result="snoise" kernelMatrix="
-             0  -1   0
-            -1   5  -1
-             0  -1   0    
-          " />
-        <feDisplacementMap id="displacement" in="SourceGraphic" in2="snoise" scale="6" />
-      </filter>
-      <filter id="dist-04">
-        <feTurbulence id="turbulence" baseFrequency="0.01" numOctaves="6" result="noise" seed="2" type="FractalNoise" />
-        <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6" />
-      </filter>
-    </defs>
-  </svg>
 
 
 </body>
